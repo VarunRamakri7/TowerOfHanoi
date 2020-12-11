@@ -21,16 +21,18 @@ public class S_SelectObject : MonoBehaviour
     // Check if user interacts with this object
     private void OnMouseOver()
     {
-        //Debug.Log("Mouse Over...");
-
         // Check if user clicks on object
         if (Input.GetMouseButtonDown(0))
         {
-            // Highlight object if user clicks on it
-            /*highlight.SetActive(true);*/
-            highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum);
-            this.GetComponent<S_ObjectType>().isSelected = true; // Update object selection
-            Debug.Log("Highlighted...");
+            // Allow only if disc and tower are not selected
+            if (!highlightController.GetComponent<S_HighlightController>().twoSelected)
+            {
+                // Highlight object if user clicks on it
+                /*highlight.SetActive(true);*/
+                highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum);
+                this.GetComponent<S_ObjectType>().isSelected = true; // Update object selection
+                Debug.Log("Highlighted...");
+            }
         }
     }
 

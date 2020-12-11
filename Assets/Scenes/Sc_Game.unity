@@ -233,6 +233,7 @@ MonoBehaviour:
   isDisc: 1
   objectNum: 4
   isSelected: 0
+  isTop: 0
 --- !u!114 &26318651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,6 +2717,7 @@ MonoBehaviour:
   isDisc: 0
   objectNum: 2
   isSelected: 0
+  isTop: 0
 --- !u!114 &950128590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3182,6 +3184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1130358603}
+  - component: {fileID: 1130358604}
   m_Layer: 0
   m_Name: StackController
   m_TagString: Untagged
@@ -3203,6 +3206,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1130358604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130358602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35daf7d2fcf3e364cbb5eb7afe22b70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1141642567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,7 +3262,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1183396612
 Transform:
@@ -3473,6 +3488,7 @@ MonoBehaviour:
   isDisc: 1
   objectNum: 1
   isSelected: 0
+  isTop: 0
 --- !u!114 &1234206526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3618,6 +3634,7 @@ MonoBehaviour:
   - {fileID: 618324506}
   selectedDisc: -1
   selectedTower: -1
+  twoSelected: 0
 --- !u!1 &1339026869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +3888,7 @@ MonoBehaviour:
   isDisc: 1
   objectNum: 2
   isSelected: 0
+  isTop: 0
 --- !u!114 &1419439540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,7 +3921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1451691045
 Transform:
   m_ObjectHideFlags: 0
@@ -4090,6 +4108,7 @@ MonoBehaviour:
   isDisc: 1
   objectNum: 3
   isSelected: 0
+  isTop: 0
 --- !u!114 &1510069367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4443,6 +4462,7 @@ MonoBehaviour:
   isDisc: 0
   objectNum: 3
   isSelected: 0
+  isTop: 0
 --- !u!114 &1557141724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,6 +5118,7 @@ MonoBehaviour:
   isDisc: 1
   objectNum: 5
   isSelected: 0
+  isTop: 0
 --- !u!114 &1763168119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5774,6 +5795,7 @@ MonoBehaviour:
   isDisc: 0
   objectNum: 1
   isSelected: 0
+  isTop: 0
 --- !u!65 &2021479668
 BoxCollider:
   m_ObjectHideFlags: 0

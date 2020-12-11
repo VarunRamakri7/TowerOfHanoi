@@ -8,5 +8,6 @@ public class S_ObjectType : MonoBehaviour
     public bool isDisc; // True is this gameObject is a Disc and false if it is a Tower
     public int objectNum; // Number of Disc/Tower
     public bool isSelected; // True if user has selected this GameObject
+    public bool isTop; // Only for disc. This disc is the topmost disc in a tower
     public Stack<int> discStack; // Only for Towers. Contains the disc that are currently in this tower
 }
