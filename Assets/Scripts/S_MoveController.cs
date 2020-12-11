@@ -29,20 +29,24 @@ public class S_MoveController : MonoBehaviour
         int selDiscNum = highlightController.GetComponent<S_HighlightController>().selectedDisc; // Get selected disc number
         int selTowerNum = highlightController.GetComponent<S_HighlightController>().selectedTower; // Get selected tower number
 
+        // Move disc to corresponding Tower
         switch (selTowerNum)
         {
-            case 1: discs[selDiscNum - 1].transform.position = spawnPointsOne[selDiscNum - 1].position;
-                DeselectCleanup(selDiscNum, selTowerNum);
+            // Tower One
+            case 1: discs[selDiscNum - 1].transform.position = spawnPointsOne[selDiscNum - 1].position; // Move disc to new position
+                DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
                 break;
 
+            // Tower Two
             case 2:
-                discs[selDiscNum - 1].transform.position = spawnPointsTwo[selDiscNum - 1].position;
-                DeselectCleanup(selDiscNum, selTowerNum);
+                discs[selDiscNum - 1].transform.position = spawnPointsTwo[selDiscNum - 1].position; // Move disc to new position
+                DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
                 break;
-
+            
+            // Tower Three
             case 3:
-                discs[selDiscNum - 1].transform.position = spawnPointsThree[selDiscNum - 1].position;
-                DeselectCleanup(selDiscNum, selTowerNum);
+                discs[selDiscNum - 1].transform.position = spawnPointsThree[selDiscNum - 1].position; // Move disc to new position
+                DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
                 break;
         }
     }
@@ -51,11 +55,11 @@ public class S_MoveController : MonoBehaviour
     public void DeselectCleanup(int discNum, int towerNum)
     {
         highlightController.GetComponent<S_HighlightController>().twoSelected = false; // Reset selections
-        discs[discNum - 1].GetComponent<S_SelectObject>().DeHighlight();
-        towers[towerNum - 1].GetComponent<S_SelectObject>().DeHighlight();
-        discs[discNum - 1].GetComponent<S_ObjectType>().currentTower = discNum - 1;
-        highlightController.GetComponent<S_HighlightController>().selectedDisc = -1;
-        highlightController.GetComponent<S_HighlightController>().selectedTower = -1;
+        discs[discNum - 1].GetComponent<S_SelectObject>().DeHighlight(); // Dehighlight disc
+        towers[towerNum - 1].GetComponent<S_SelectObject>().DeHighlight(); // Dehighlight tower
+        discs[discNum - 1].GetComponent<S_ObjectType>().currentTower = discNum - 1; // Change current tower of Disc
+        highlightController.GetComponent<S_HighlightController>().selectedDisc = -1; // Reset selected disc
+        highlightController.GetComponent<S_HighlightController>().selectedTower = -1; // Reset selected tower
         Debug.Log("Moving Disc " + discNum);
     }
 }

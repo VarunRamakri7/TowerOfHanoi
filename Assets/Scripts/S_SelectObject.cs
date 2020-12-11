@@ -28,7 +28,6 @@ public class S_SelectObject : MonoBehaviour
             if (!highlightController.GetComponent<S_HighlightController>().twoSelected)
             {
                 // Highlight object if user clicks on it
-                /*highlight.SetActive(true);*/
                 highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum, true);
                 this.GetComponent<S_ObjectType>().isSelected = true; // Update object selection
                 //Debug.Log("Highlighted...");
