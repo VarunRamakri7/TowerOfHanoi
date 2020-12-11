@@ -29,7 +29,7 @@ public class S_SelectObject : MonoBehaviour
             {
                 // Highlight object if user clicks on it
                 /*highlight.SetActive(true);*/
-                highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum);
+                highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum, true);
                 this.GetComponent<S_ObjectType>().isSelected = true; // Update object selection
                 //Debug.Log("Highlighted...");
             }
@@ -37,8 +37,11 @@ public class S_SelectObject : MonoBehaviour
     }
 
     // Move Disc to the another tower
-    /*private void MoveDisc()
+    public void DeHighlight()
     {
+        highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum, false); // Dehighlight Disc
+        this.GetComponent<S_ObjectType>().isSelected = false; // Update object selection
 
-    }*/
+        Debug.Log("DeHighlighting Object");
+    }
 }

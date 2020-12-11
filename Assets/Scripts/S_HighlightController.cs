@@ -30,15 +30,9 @@ public class S_HighlightController : MonoBehaviour
     {
         // If max objects have been selected
         twoSelected = (selectedDisc != -1) && (selectedTower != -1);
-
-        // Move Disc to new Tower
-        if (twoSelected)
-        {
-            // Check validity with Stack
-        }
     }
 
-    public void HighlightObject(bool isDisc, int indicatorNum)
+    public void HighlightObject(bool isDisc, int indicatorNum, bool highlight)
     {
         // Check if the gameobject is a disc
         if (isDisc)
@@ -46,11 +40,11 @@ public class S_HighlightController : MonoBehaviour
             // Hide previously selected disc
             if (selectedDisc != -1)
             {
-                discIndicators[selectedDisc - 1].gameObject.SetActive(false); // Highlight the disc
+                discIndicators[selectedDisc - 1].gameObject.SetActive(!highlight); // Highlight the disc
             }
 
             selectedDisc = indicatorNum;
-            discIndicators[indicatorNum - 1].gameObject.SetActive(true); // Highlight the disc
+            discIndicators[indicatorNum - 1].gameObject.SetActive(highlight); // Highlight the disc
 
             Debug.Log("Disc selected: " + selectedDisc);
         }
@@ -59,11 +53,11 @@ public class S_HighlightController : MonoBehaviour
             // Hide previously selected Tower
             if (selectedTower != -1)
             {
-                towerIndicators[selectedTower - 1].gameObject.SetActive(false); // Highlight the disc
+                towerIndicators[selectedTower - 1].gameObject.SetActive(!highlight); // Highlight the disc
             }
 
             selectedTower = indicatorNum;
-            towerIndicators[indicatorNum - 1].gameObject.SetActive(true); // Highlight the tower
+            towerIndicators[indicatorNum - 1].gameObject.SetActive(highlight); // Highlight the tower
 
             Debug.Log("Tower selected: " + selectedTower);
         }

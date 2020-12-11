@@ -2777,6 +2777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb829155c373e2746a1e95b850a2b8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightController: {fileID: 1336084374}
   spawnPointsOne:
   - {fileID: 1141642568}
   - {fileID: 1638245238}
@@ -2801,7 +2802,10 @@ MonoBehaviour:
   - {fileID: 1510069361}
   - {fileID: 26318645}
   - {fileID: 1763168113}
-  newDiscPosition: {fileID: 0}
+  towers:
+  - {fileID: 2021479666}
+  - {fileID: 950128584}
+  - {fileID: 1557141718}
 --- !u!1 &996869167
 GameObject:
   m_ObjectHideFlags: 0
