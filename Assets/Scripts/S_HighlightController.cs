@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class S_HighlightController : MonoBehaviour
 {
-    public static Image[] discIndicators = new Image[5]; // All 5 disc's indicators
-    public static Image[] towerIndicators = new Image[3]; // All 3 tower's indicators
+    public Image[] discIndicators = new Image[5]; // All 5 disc's indicators
+    public Image[] towerIndicators = new Image[3]; // All 3 tower's indicators
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class S_HighlightController : MonoBehaviour
         }
     }
 
-    public static void HighlightObject(bool isDisc, int indicatorNum)
+    public void HighlightObject(bool isDisc, int indicatorNum)
     {
         // Check if the gameobject is a disc
         if (isDisc)
