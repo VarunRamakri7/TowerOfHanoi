@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1900555423}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &101927040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 705829950}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &1022884513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,6 +2893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1102002620}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &1265718291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3288,6 +3291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1594126128}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &1451691044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,6 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 592156580}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &1557141718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,6 +3637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 618324504}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &1557290267
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1557290267}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &1766503712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4865,6 +4872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 2051501953}
+  highlightController: {fileID: 1336084374}
 --- !u!1 &2051501953
 GameObject:
   m_ObjectHideFlags: 0

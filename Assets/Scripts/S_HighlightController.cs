@@ -24,16 +24,16 @@ public class S_HighlightController : MonoBehaviour
         }
     }
 
-    /*public void HighlightObject(bool isDisc, int indicatorNum)
+    public void HighlightObject(bool isDisc, int indicatorNum)
     {
         // Check if the gameobject is a disc
         if (isDisc)
         {
-            discIndicators[indicatorNum].gameObject.SetActive(true); // Highlight the disc
+            discIndicators[indicatorNum - 1].gameObject.SetActive(true); // Highlight the disc
         }
         else
         {
-            towerIndicators[indicatorNum].gameObject.SetActive(true); // Highlight the tower
+            towerIndicators[indicatorNum - 1].gameObject.SetActive(true); // Highlight the tower
         }
-    }*/
+    }
 }

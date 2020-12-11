@@ -5,7 +5,7 @@ public class S_TimeController : MonoBehaviour
 {
     public Text time; // Timer that counts up
     public Text movesMade; // Shows the number of moves made by user
-    public int moves; // Moves made counter
+    public int moves = 0; // Moves made counter
 
     private float seconds = 0.0f;
     private float minutes = 0.0f;
@@ -22,6 +22,6 @@ public class S_TimeController : MonoBehaviour
         }
 
         time.text = minutes + ":" + seconds;
-
+        movesMade.text = moves.ToString();
     }
 }
