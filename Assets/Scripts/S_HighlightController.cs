@@ -30,6 +30,12 @@ public class S_HighlightController : MonoBehaviour
     {
         // If max objects have been selected
         twoSelected = (selectedDisc != -1) && (selectedTower != -1);
+
+        // Move Disc to new Tower
+        if (twoSelected)
+        {
+            // Check validity with Stack
+        }
     }
 
     public void HighlightObject(bool isDisc, int indicatorNum)
