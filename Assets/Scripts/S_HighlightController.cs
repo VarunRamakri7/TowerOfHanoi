@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class S_MoveDiscController : MonoBehaviour
+public class S_HighlightController : MonoBehaviour
 {
     public static Image[] discIndicators = new Image[5]; // All 5 disc's indicators
     public static Image[] towerIndicators = new Image[3]; // All 3 tower's indicators
