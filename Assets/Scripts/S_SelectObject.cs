@@ -41,6 +41,6 @@ public class S_SelectObject : MonoBehaviour
         highlightController.GetComponent<S_HighlightController>().HighlightObject(isDisc, objNum, false); // Dehighlight Disc
         this.GetComponent<S_ObjectType>().isSelected = false; // Update object selection
 
-        Debug.Log("DeHighlighting Object");
+        //Debug.Log("DeHighlighting Object");
     }
 }

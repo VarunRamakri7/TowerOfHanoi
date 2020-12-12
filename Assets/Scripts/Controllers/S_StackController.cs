@@ -36,7 +36,7 @@ public class S_StackController : MonoBehaviour
                 {
                     Debug.Log("Stack not empty...");
                     // Check if topmost disc is larger than new disc
-                    if (towerOne.Peek() > discToAddNum)
+                    if (towerOne.Peek() < discToAddNum)
                     {
                         Debug.Log("New disc is smaller...");
                         discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
@@ -44,6 +44,8 @@ public class S_StackController : MonoBehaviour
 
                         towerOne.Push(discToAddNum); // Push disc onto stack
                         isValid = true; // Disc addition is valid
+
+                        PrintStack(towerOne, 1); // Print Stack after removing
                     }
                 }
                 else
@@ -54,6 +56,8 @@ public class S_StackController : MonoBehaviour
 
                     towerOne.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
+
+                    PrintStack(towerOne, 1); // Print Stack after removing
                 }
                 break;
 
@@ -65,7 +69,7 @@ public class S_StackController : MonoBehaviour
                 {
                     Debug.Log("Stack not empty...");
                     // Check if topmost disc is larger than new disc
-                    if (towerTwo.Peek() > discToAddNum)
+                    if (towerTwo.Peek() < discToAddNum)
                     {
                         Debug.Log("New disc is smaller...");
                         discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
@@ -73,6 +77,8 @@ public class S_StackController : MonoBehaviour
 
                         towerTwo.Push(discToAddNum);
                         isValid = true; // Disc addition is valid
+
+                        PrintStack(towerTwo, 2); // Print Stack after removing
                     }
                 }
                 else
@@ -83,6 +89,8 @@ public class S_StackController : MonoBehaviour
 
                     towerTwo.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
+
+                    PrintStack(towerTwo, 2); // Print Stack after removing
                 }
                 break;
 
@@ -94,7 +102,7 @@ public class S_StackController : MonoBehaviour
                 {
                     Debug.Log("Stack not empty...");
                     // Check if topmost disc is larger than new disc
-                    if (towerThree.Peek() > discToAddNum)
+                    if (towerThree.Peek() < discToAddNum)
                     {
                         Debug.Log("New disc is smaller...");
                         discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
@@ -102,6 +110,8 @@ public class S_StackController : MonoBehaviour
 
                         towerThree.Push(discToAddNum);
                         isValid = true; // Disc addition is valid
+
+                        PrintStack(towerThree, 3); // Print Stack after removing
                     }
                 }
                 else
@@ -112,6 +122,8 @@ public class S_StackController : MonoBehaviour
 
                     towerThree.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
+
+                    PrintStack(towerThree, 3); // Print Stack after removing
                 }
                 break;
         }
@@ -130,6 +142,7 @@ public class S_StackController : MonoBehaviour
             case 1:
                 Debug.Log("Removing 1...");
                 towerOne.Pop(); // Remove top disc
+                PrintStack(towerOne, 1); // Print Stack after removing
                 if (towerOne.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -145,6 +158,7 @@ public class S_StackController : MonoBehaviour
             case 2:
                 Debug.Log("Removing 2...");
                 towerTwo.Pop(); // Remove top disc
+                PrintStack(towerTwo, 2); // Print Stack after removing
                 if (towerTwo.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc" + (towerTwo.Peek() - 1) + " as top...");
@@ -160,6 +174,7 @@ public class S_StackController : MonoBehaviour
             case 3:
                 Debug.Log("Removing 3...");
                 towerThree.Pop(); // Remove top disc
+                PrintStack(towerThree, 3); // Print Stack after removing
                 if (towerThree.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -186,9 +201,9 @@ public class S_StackController : MonoBehaviour
     }
 
     // Print Stack
-    public void PrintStack(Stack<int> tower)
+    public void PrintStack(Stack<int> tower, int num)
     {
-        Debug.Log("Tower contains...");
+        Debug.Log("Tower " + num + " contains...");
         foreach(int disc in tower)
         {
             Debug.Log("Disc " + disc);
