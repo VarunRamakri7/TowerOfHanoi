@@ -10,6 +10,8 @@ public class S_StackController : MonoBehaviour
     public Stack<int> towerTwo = new Stack<int>(STACK_SIZE);
     public Stack<int> towerThree = new Stack<int>(STACK_SIZE);
 
+    public bool endGame = false; // End game status
+
     // Start is called before the first frame update
     void Start()
     {
@@ -195,20 +197,30 @@ public class S_StackController : MonoBehaviour
         }
     }
 
-    // Check stack to see if all discs have been moved to a new tower
-    public bool CheckComplettion(Stack<int> tower)
-    {
-        bool isComplete = false;
-
-        // Iterate through Stack and check if order is correct
-
-
-        return isComplete;
-    }
-
     // Key detection for debugging
     private void Update()
     {
+        // Check Game complete state
+        if (towerOne.Count == STACK_SIZE) // If all discs are in tower 1
+        {
+            endGame = CheckComplettion(towerOne);
+        }
+        else if (towerTwo.Count == STACK_SIZE) // If all discs are in tower 2
+        {
+            endGame = CheckComplettion(towerTwo);
+        }
+        else if (towerThree.Count == STACK_SIZE) // If all discs are in tower 3
+        {
+            endGame = CheckComplettion(towerThree);
+        }
+
+        // End game if it is complete
+        if (endGame)
+        {
+            Debug.Log("Game Over. You have won!");
+        }
+
+
         // Use keys to print stack contents
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -249,6 +261,40 @@ public class S_StackController : MonoBehaviour
             towerThree.Clear();
         }
 
+    }
+
+    // Check stack to see if all discs have been moved to a new tower
+    public bool CheckComplettion(Stack<int> tower)
+    {
+        bool isComplete = false; // If the player has moved all discs to a new tower
+
+        // Iterate through Stack and check if order is correct
+        Stack<int> copy = tower;
+        int[] temp = new int[STACK_SIZE];
+
+        int i = 0;
+        foreach (int disc in tower) // Iterate through copy of stack
+        {
+            // Copy all contents of the stack into an array
+            temp[i++] = copy.Pop();
+        }
+
+        // Check if array contents are in descending order
+        for(i = 0; i < STACK_SIZE - 1; i++)
+        {
+            if (temp[i] != (1 + temp[i + 1]))
+            {
+                Debug.Log("Discs in wrong order...");
+                break;
+            }
+            else
+            {
+                Debug.Log("Discs in correct order...");
+                isComplete = true;
+            }
+        }
+
+        return isComplete;
     }
 
     // Print Stack
