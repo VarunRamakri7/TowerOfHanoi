@@ -45,7 +45,7 @@ public class S_StackController : MonoBehaviour
                         towerOne.Push(discToAddNum); // Push disc onto stack
                         isValid = true; // Disc addition is valid
 
-                        PrintStack(towerOne, 1); // Print Stack after removing
+                        //PrintStack(towerOne, 1); // Print Stack after removing
                     }
                 }
                 else
@@ -57,7 +57,7 @@ public class S_StackController : MonoBehaviour
                     towerOne.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
 
-                    PrintStack(towerOne, 1); // Print Stack after removing
+                    //PrintStack(towerOne, 1); // Print Stack after removing
                 }
                 break;
 
@@ -78,7 +78,7 @@ public class S_StackController : MonoBehaviour
                         towerTwo.Push(discToAddNum);
                         isValid = true; // Disc addition is valid
 
-                        PrintStack(towerTwo, 2); // Print Stack after removing
+                        //PrintStack(towerTwo, 2); // Print Stack after removing
                     }
                 }
                 else
@@ -90,7 +90,7 @@ public class S_StackController : MonoBehaviour
                     towerTwo.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
 
-                    PrintStack(towerTwo, 2); // Print Stack after removing
+                    //PrintStack(towerTwo, 2); // Print Stack after removing
                 }
                 break;
 
@@ -111,7 +111,7 @@ public class S_StackController : MonoBehaviour
                         towerThree.Push(discToAddNum);
                         isValid = true; // Disc addition is valid
 
-                        PrintStack(towerThree, 3); // Print Stack after removing
+                        //PrintStack(towerThree, 3); // Print Stack after removing
                     }
                 }
                 else
@@ -123,7 +123,7 @@ public class S_StackController : MonoBehaviour
                     towerThree.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
 
-                    PrintStack(towerThree, 3); // Print Stack after removing
+                    //PrintStack(towerThree, 3); // Print Stack after removing
                 }
                 break;
         }
@@ -142,7 +142,7 @@ public class S_StackController : MonoBehaviour
             case 1:
                 Debug.Log("Removing 1...");
                 towerOne.Pop(); // Remove top disc
-                PrintStack(towerOne, 1); // Print Stack after removing
+                //PrintStack(towerOne, 1); // Print Stack after removing
                 if (towerOne.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -158,7 +158,7 @@ public class S_StackController : MonoBehaviour
             case 2:
                 Debug.Log("Removing 2...");
                 towerTwo.Pop(); // Remove top disc
-                PrintStack(towerTwo, 2); // Print Stack after removing
+                //PrintStack(towerTwo, 2); // Print Stack after removing
                 if (towerTwo.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc" + (towerTwo.Peek() - 1) + " as top...");
@@ -174,7 +174,7 @@ public class S_StackController : MonoBehaviour
             case 3:
                 Debug.Log("Removing 3...");
                 towerThree.Pop(); // Remove top disc
-                PrintStack(towerThree, 3); // Print Stack after removing
+                //PrintStack(towerThree, 3); // Print Stack after removing
                 if (towerThree.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -198,6 +198,50 @@ public class S_StackController : MonoBehaviour
 
 
         return isComplete;
+    }
+
+    private void Update()
+    {
+        // Use keys to print stack contents
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("1 Pressed...");
+            // Print Tower One
+            PrintStack(towerOne, 1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("2 Pressed...");
+            // Print Tower Two
+            PrintStack(towerTwo, 2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log("3 Pressed...");
+            // Print Tower Three
+            PrintStack(towerThree, 3);
+        }
+
+        // Clear stack contents
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Debug.Log("1 Cleared...");
+            // Clear Tower One
+            towerOne.Clear();
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("2 Cleared...");
+            // Clear Tower Two
+            towerTwo.Clear();
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("3 Cleared...");
+            // Clear Tower Three
+            towerThree.Clear();
+        }
+
     }
 
     // Print Stack

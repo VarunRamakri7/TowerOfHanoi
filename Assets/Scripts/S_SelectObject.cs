@@ -4,7 +4,9 @@ using UnityEngine.UI;
 public class S_SelectObject : MonoBehaviour
 {
     public GameObject highlight; // Image attached to this object
-    public GameObject highlightController;
+
+    public GameObject highlightController; // Highlight controller in game
+    public GameObject stackController; // View Tower's stack contents
 
     // This objects information
     private bool isDisc;

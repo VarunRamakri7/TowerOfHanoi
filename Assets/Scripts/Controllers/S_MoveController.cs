@@ -8,6 +8,7 @@ public class S_MoveController : MonoBehaviour
 
     public GameObject highlightController; // Highlight Controller object in game
     public GameObject stackController; // Stack controller for tower and disc movement
+    public GameObject timeController; // Keep track of moves made
 
     public GameObject invalidMove; // Warning text
     public Transform[] spawnPointsOne = new Transform[NUM_DISCS]; // Spawn points on Tower One
@@ -57,11 +58,15 @@ public class S_MoveController : MonoBehaviour
 
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
                         //Debug.Log("Valid Change 1...");
+
+                        timeController.GetComponent<S_TimeController>().moves++; // Increment number of moves made
                     }
                     else
                     {
                         ShowWarning(); // Invalid move
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
+
+                        timeController.GetComponent<S_TimeController>().moves++; // Increment number of moves made
                     }
                     break;
 
@@ -77,11 +82,15 @@ public class S_MoveController : MonoBehaviour
 
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
                         //Debug.Log("Valid Change 2...");
+
+                        timeController.GetComponent<S_TimeController>().moves++; // Increment number of moves made
                     }
                     else
                     {
                         ShowWarning(); // Invalid move
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
+
+                        timeController.GetComponent<S_TimeController>().moves++; // Increment number of moves made
                     }
                     break;
 
@@ -96,11 +105,15 @@ public class S_MoveController : MonoBehaviour
 
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
                         //Debug.Log("Valid Change 3...");
+
+                        timeController.GetComponent<S_TimeController>().moves++; // Increment number of moves made
                     }
                     else
                     {
                         ShowWarning(); // Invalid move
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
+
+                        timeController.GetComponent<S_TimeController>().moves++; // Increment number of moves made
                     }
                     break;
             }
