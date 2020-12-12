@@ -30,7 +30,7 @@ public class S_StackController : MonoBehaviour
         {
             case 1:
                 // Check if top disc in tower is smaller than topmost disc
-                if (towerOne.Peek() > discToAddNum)
+                if (towerOne.Count == 0 || towerOne.Peek() > discToAddNum)
                 {
                     discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
                     discs[discToAddNum].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
@@ -42,7 +42,7 @@ public class S_StackController : MonoBehaviour
 
             case 2:
                 // Check if top disc in tower is smaller than topmost disc
-                if (towerTwo.Peek() > discToAddNum)
+                if (towerTwo.Count == 0 || towerTwo.Peek() > discToAddNum)
                 {
                     discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
                     discs[discToAddNum].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
@@ -54,7 +54,7 @@ public class S_StackController : MonoBehaviour
 
             case 3:
                 // Check if top disc in tower is smaller than topmost disc
-                if (towerThree.Peek() > discToAddNum)
+                if (towerThree.Count == 0 || towerThree.Peek() > discToAddNum)
                 {
                     discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
                     discs[discToAddNum].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
@@ -64,6 +64,8 @@ public class S_StackController : MonoBehaviour
                 }
                 break;
         }
+
+        Debug.Log("Stack change is: " + isValid);
 
         return isValid;
     }
