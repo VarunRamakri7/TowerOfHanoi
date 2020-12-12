@@ -29,11 +29,28 @@ public class S_StackController : MonoBehaviour
         switch (towerNum)
         {
             case 1:
+                Debug.Log("Case 1...");
+                Debug.Log("Stack One Count: " + towerOne.Count);
                 // Check if top disc in tower is smaller than topmost disc
-                if (towerOne.Count == 0 || towerOne.Peek() > discToAddNum)
+                if (towerOne.Count > 0) // If Stack is not empty
                 {
-                    discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
-                    discs[discToAddNum].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
+                    Debug.Log("Stack not empty...");
+                    // Check if topmost disc is larger than new disc
+                    if (towerOne.Peek() > discToAddNum)
+                    {
+                        Debug.Log("New disc is smaller...");
+                        discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
+                        discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
+
+                        towerOne.Push(discToAddNum); // Push disc onto stack
+                        isValid = true; // Disc addition is valid
+                    }
+                }
+                else
+                {
+                    Debug.Log("Adding to empty Stack...");
+                    // Push into empty stack
+                    discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
 
                     towerOne.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
@@ -41,25 +58,59 @@ public class S_StackController : MonoBehaviour
                 break;
 
             case 2:
+                Debug.Log("Case 2...");
+                Debug.Log("Stack Two Count: " + towerTwo.Count);
                 // Check if top disc in tower is smaller than topmost disc
-                if (towerTwo.Count == 0 || towerTwo.Peek() > discToAddNum)
+                if (towerTwo.Count > 0) // If Stack is not empty
                 {
-                    discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
-                    discs[discToAddNum].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
+                    Debug.Log("Stack not empty...");
+                    // Check if topmost disc is larger than new disc
+                    if (towerTwo.Peek() > discToAddNum)
+                    {
+                        Debug.Log("New disc is smaller...");
+                        discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
+                        discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
 
-                    towerTwo.Push(discToAddNum);
+                        towerTwo.Push(discToAddNum);
+                        isValid = true; // Disc addition is valid
+                    }
+                }
+                else
+                {
+                    Debug.Log("Adding to empty Stack...");
+                    // Push into empty stack
+                    discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
+
+                    towerTwo.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
                 }
                 break;
 
             case 3:
+                Debug.Log("Case 3...");
+                Debug.Log("Stack Three Count: " + towerThree.Count);
                 // Check if top disc in tower is smaller than topmost disc
-                if (towerThree.Count == 0 || towerThree.Peek() > discToAddNum)
+                if (towerThree.Count > 0) // If Stack is not empty
                 {
-                    discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
-                    discs[discToAddNum].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
+                    Debug.Log("Stack not empty...");
+                    // Check if topmost disc is larger than new disc
+                    if (towerThree.Peek() > discToAddNum)
+                    {
+                        Debug.Log("New disc is smaller...");
+                        discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
+                        discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
 
-                    towerThree.Push(discToAddNum);
+                        towerThree.Push(discToAddNum);
+                        isValid = true; // Disc addition is valid
+                    }
+                }
+                else
+                {
+                    Debug.Log("Adding to empty Stack...");
+                    // Push into empty stack
+                    discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
+
+                    towerThree.Push(discToAddNum); // Push disc onto stack
                     isValid = true; // Disc addition is valid
                 }
                 break;
@@ -76,16 +127,49 @@ public class S_StackController : MonoBehaviour
         // Remove the topmost disc from this tower
         switch (towerNum)
         {
-            case 1: towerOne.Pop(); // Remove top disc
-                discs[towerOne.Peek()].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+            case 1:
+                Debug.Log("Removing 1...");
+                towerOne.Pop(); // Remove top disc
+                if (towerOne.Count > 0) // Check if stack is empty
+                {
+                    Debug.Log("Make next disc as top...");
+                    discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                }
+                else
+                {
+                    Debug.Log("Stack 1 size: " + towerOne.Count);
+                    Debug.Log("Cannot retop 1...");
+                }
                 break;
 
-            case 2: towerTwo.Pop(); // Remove top disc
-                discs[towerTwo.Peek()].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+            case 2:
+                Debug.Log("Removing 2...");
+                towerTwo.Pop(); // Remove top disc
+                if (towerTwo.Count > 0) // Check if stack is empty
+                {
+                    Debug.Log("Make next disc" + (towerTwo.Peek() - 1) + " as top...");
+                    discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                }
+                else
+                {
+                    Debug.Log("Stack 2 size: " + towerTwo.Count);
+                    Debug.Log("Cannot retop 2...");
+                }
                 break;
 
-            case 3: towerThree.Pop(); // Remove top disc
-                discs[towerTwo.Peek()].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+            case 3:
+                Debug.Log("Removing 3...");
+                towerThree.Pop(); // Remove top disc
+                if (towerThree.Count > 0) // Check if stack is empty
+                {
+                    Debug.Log("Make next disc as top...");
+                    discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                }
+                else
+                {
+                    Debug.Log("Stack 3 size: " + towerThree.Count);
+                    Debug.Log("Cannot retop 3...");
+                }
                 break;
         }
     }
@@ -99,5 +183,15 @@ public class S_StackController : MonoBehaviour
 
 
         return isComplete;
+    }
+
+    // Print Stack
+    public void PrintStack(Stack<int> tower)
+    {
+        Debug.Log("Tower contains...");
+        foreach(int disc in tower)
+        {
+            Debug.Log("Disc " + disc);
+        }
     }
 }

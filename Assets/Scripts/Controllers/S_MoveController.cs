@@ -17,6 +17,11 @@ public class S_MoveController : MonoBehaviour
     public GameObject[] towers = new GameObject[NUM_TOWERS]; // All towers in game
     //public Transform newDiscPosition; // New position of Disc
 
+    private void Start()
+    {
+        invalidMove.SetActive(false);
+    }
+
     private void Update()
     {
         // Move disc only if disc and tower are selected
@@ -43,12 +48,12 @@ public class S_MoveController : MonoBehaviour
                 // Tower One
                 case 1:
                     // Check if move is valid
-                    if (stackController.GetComponent<S_StackController>().AddDisc(selDiscNum, selDiscNum, discs))
+                    if (stackController.GetComponent<S_StackController>().AddDisc(selTowerNum, selDiscNum, discs))
                     {
-                        stackController.GetComponent<S_StackController>().RemoveDisc(selDiscNum, discs);// Remove disc from current stack
+                        stackController.GetComponent<S_StackController>().RemoveDisc(selTowerNum, discs);// Remove disc from current stack
                         discs[selDiscNum - 1].transform.position = spawnPointsOne[selDiscNum - 1].position; // Move disc to new position
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
-                        Debug.Log("Valid Change...");
+                        Debug.Log("Valid Change 1...");
                     }
                     else
                     {
@@ -60,12 +65,12 @@ public class S_MoveController : MonoBehaviour
                 // Tower Two
                 case 2:
                     // Check if move is valid
-                    if (stackController.GetComponent<S_StackController>().AddDisc(selDiscNum, selDiscNum, discs))
+                    if (stackController.GetComponent<S_StackController>().AddDisc(selTowerNum, selDiscNum, discs))
                     {
-                        stackController.GetComponent<S_StackController>().RemoveDisc(selDiscNum, discs);// Remove disc from current stack
+                        stackController.GetComponent<S_StackController>().RemoveDisc(selTowerNum, discs);// Remove disc from current stack
                         discs[selDiscNum - 1].transform.position = spawnPointsTwo[selDiscNum - 1].position; // Move disc to new position
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
-                        Debug.Log("Valid Change...");
+                        Debug.Log("Valid Change 2...");
                     }
                     else
                     {
@@ -76,12 +81,12 @@ public class S_MoveController : MonoBehaviour
 
                 // Tower Three
                 case 3:
-                    if (stackController.GetComponent<S_StackController>().AddDisc(selDiscNum, selDiscNum, discs))
+                    if (stackController.GetComponent<S_StackController>().AddDisc(selTowerNum, selDiscNum, discs))
                     {
-                        stackController.GetComponent<S_StackController>().RemoveDisc(selDiscNum, discs);// Remove disc from current stack
+                        stackController.GetComponent<S_StackController>().RemoveDisc(selTowerNum, discs);// Remove disc from current stack
                         discs[selDiscNum - 1].transform.position = spawnPointsThree[selDiscNum - 1].position; // Move disc to new position
                         DeselectCleanup(selDiscNum, selTowerNum); // Cleanup highlights
-                        Debug.Log("Valid Change...");
+                        Debug.Log("Valid Change 3...");
                     }
                     else
                     {
