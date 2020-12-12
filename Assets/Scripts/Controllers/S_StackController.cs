@@ -136,13 +136,17 @@ public class S_StackController : MonoBehaviour
     // Remove disc from tower - Pop
     public void RemoveDisc(int towerNum, GameObject[] discs)
     {
+        Debug.Log("In Remove...");
+        //Debug.Log("Disc's tower num: " + towerNum);
+
         // Remove the topmost disc from this tower
         switch (towerNum)
         {
             case 1:
-                Debug.Log("Removing 1...");
+                Debug.Log("Removing from 1...");
                 towerOne.Pop(); // Remove top disc
                 //PrintStack(towerOne, 1); // Print Stack after removing
+                Debug.Log("Tower 1 size: " + towerOne.Count);
                 if (towerOne.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -156,12 +160,13 @@ public class S_StackController : MonoBehaviour
                 break;
 
             case 2:
-                Debug.Log("Removing 2...");
+                Debug.Log("Removing from 2...");
                 towerTwo.Pop(); // Remove top disc
                 //PrintStack(towerTwo, 2); // Print Stack after removing
+                Debug.Log("Tower 2 size: " + towerTwo.Count);
                 if (towerTwo.Count > 0) // Check if stack is empty
                 {
-                    Debug.Log("Make next disc" + (towerTwo.Peek() - 1) + " as top...");
+                    Debug.Log("Make next disc " + towerTwo.Peek() + " as top...");
                     discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
                 }
                 else
@@ -172,9 +177,10 @@ public class S_StackController : MonoBehaviour
                 break;
 
             case 3:
-                Debug.Log("Removing 3...");
+                Debug.Log("Removing from 3...");
                 towerThree.Pop(); // Remove top disc
                 //PrintStack(towerThree, 3); // Print Stack after removing
+                Debug.Log("Tower 3 size: " + towerThree.Count);
                 if (towerThree.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -200,6 +206,7 @@ public class S_StackController : MonoBehaviour
         return isComplete;
     }
 
+    // Key detection for debugging
     private void Update()
     {
         // Use keys to print stack contents

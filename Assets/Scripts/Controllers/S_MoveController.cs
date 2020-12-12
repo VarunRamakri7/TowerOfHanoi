@@ -51,6 +51,8 @@ public class S_MoveController : MonoBehaviour
                     // Check if move is valid
                     if (stackController.GetComponent<S_StackController>().AddDisc(selTowerNum, selDiscNum, discs))
                     {
+                        Debug.Log("Moving to 1");
+
                         stackController.GetComponent<S_StackController>().RemoveDisc(discs[selDiscNum - 1].GetComponent<S_ObjectType>().currentTower, discs);// Remove disc from current stack
 
                         discs[selDiscNum - 1].transform.position = spawnPointsOne[selDiscNum - 1].position; // Move disc to new position
@@ -75,6 +77,8 @@ public class S_MoveController : MonoBehaviour
                     // Check if move is valid
                     if (stackController.GetComponent<S_StackController>().AddDisc(selTowerNum, selDiscNum, discs))
                     {
+                        Debug.Log("Moving to 2");
+
                         stackController.GetComponent<S_StackController>().RemoveDisc(discs[selDiscNum - 1].GetComponent<S_ObjectType>().currentTower, discs);// Remove disc from current stack
 
                         discs[selDiscNum - 1].transform.position = spawnPointsTwo[selDiscNum - 1].position; // Move disc to new position
@@ -98,6 +102,8 @@ public class S_MoveController : MonoBehaviour
                 case 3:
                     if (stackController.GetComponent<S_StackController>().AddDisc(selTowerNum, selDiscNum, discs))
                     {
+                        Debug.Log("Moving to 3");
+
                         stackController.GetComponent<S_StackController>().RemoveDisc(discs[selDiscNum - 1].GetComponent<S_ObjectType>().currentTower, discs);// Remove disc from current stack
 
                         discs[selDiscNum - 1].transform.position = spawnPointsThree[selDiscNum - 1].position; // Move disc to new position
@@ -132,10 +138,10 @@ public class S_MoveController : MonoBehaviour
         highlightController.GetComponent<S_HighlightController>().twoSelected = false; // Reset selections
         discs[discNum - 1].GetComponent<S_SelectObject>().DeHighlight(); // Dehighlight disc
         towers[towerNum - 1].GetComponent<S_SelectObject>().DeHighlight(); // Dehighlight tower
-        discs[discNum - 1].GetComponent<S_ObjectType>().currentTower = discNum - 1; // Change current tower of Disc
+        //discs[discNum - 1].GetComponent<S_ObjectType>().currentTower = discNum - 1; // Change current tower of Disc
         highlightController.GetComponent<S_HighlightController>().selectedDisc = -1; // Reset selected disc
         highlightController.GetComponent<S_HighlightController>().selectedTower = -1; // Reset selected tower
-        Debug.Log("Moving Disc: " + discNum);
+        //Debug.Log("Moving Disc: " + discNum);
     }
 
     public void ShowWarning()
