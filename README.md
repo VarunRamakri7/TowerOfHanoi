@@ -7,8 +7,9 @@ Project Files from the Tower of Hanoi game made using Unity
 - [x] Object highlighting
 - [x] FPS Camera Setup
 - [x] Disc Movement
-- [ ] Game Logic
-- [ ] Stack functionality
-- [ ] Full game functionality
+- [x] Game Logic
+- [x] Stack functionality
+- [x] Basic full game functionality
+- [ ] Bug fixes
 
 
