@@ -19,7 +19,7 @@ public class S_EndGameController : MonoBehaviour
     public void EndGame()
     {
         // Update final time and moves made
-        actualTime = timeController.GetComponent<S_TimeController>().time;
+        actualTime.text = timeController.GetComponent<S_TimeController>().time.text;
         movesMade.text = timeController.GetComponent<S_TimeController>().moves.ToString();
 
         // Hide all previous assets and show Game over
