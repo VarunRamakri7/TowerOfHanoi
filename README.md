@@ -4,7 +4,7 @@ Project Files from the Tower of Hanoi game made using Unity
 ## How To Play
 The game opens to a Main Menu from where you can choose to start
 the game, view the rules, or exit.
-If you start the game,you will be in control of a First-Person
+If you start the game, you will be in control of a First-Person
 camera which you can be moved using WASD and the mouse for direction.
 This lets you move around the environment. All you need to start
 the game is to go onto the pedestal in the environment that is
@@ -15,8 +15,8 @@ The game ends once all the discs have been successfully moved (in
 order) from one tower to another.
 
 ### Controls
-Mouse - Menu elements, moving discs, direction (in First-Person view) 
-WASD - Move around (in First-Person view).
+- Mouse - Menu elements, moving discs, direction (in First-Person view) 
+- WASD - Move around (in First-Person view).
 
 ### Moving Discs
 Click on the disc you want to move and then on the tower you want to move the disc to.
