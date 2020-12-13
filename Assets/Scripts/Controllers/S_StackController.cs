@@ -231,18 +231,17 @@ public class S_StackController : MonoBehaviour
         bool isComplete = false; // If the player has moved all discs to a new tower
 
         // Iterate through Stack and check if order is correct
-        Stack<int> copy = tower;
+        //Stack<int> copy = tower;
         int[] temp = new int[STACK_SIZE];
 
-        int i = 0;
-        foreach (int disc in tower) // Iterate through copy of stack
+        for (int i = 0; i < STACK_SIZE; i++) // Iterate through copy of stack
         {
             // Copy all contents of the stack into an array
-            temp[i++] = copy.Pop();
+            temp[i] = tower.Peek();
         }
 
         // Check if array contents are in descending order
-        for(i = 0; i < STACK_SIZE - 1; i++)
+        for(int i = 0; i < STACK_SIZE - 1; i++)
         {
             if (temp[i] != (1 + temp[i + 1])) // Check if araray contents are in descending order
             {
