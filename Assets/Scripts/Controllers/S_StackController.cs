@@ -52,6 +52,8 @@ public class S_StackController : MonoBehaviour
                         towerOne.Push(discToAddNum); // Push disc onto stack
                         isValid = true; // Disc addition is valid
 
+                        //ResetTop(towerOne, discs);
+
                         //PrintStack(towerOne, 1); // Print Stack after removing
                     }
                 }
@@ -85,6 +87,8 @@ public class S_StackController : MonoBehaviour
                         towerTwo.Push(discToAddNum);
                         isValid = true; // Disc addition is valid
 
+                        //ResetTop(towerTwo, discs);
+
                         //PrintStack(towerTwo, 2); // Print Stack after removing
                     }
                 }
@@ -117,6 +121,8 @@ public class S_StackController : MonoBehaviour
 
                         towerThree.Push(discToAddNum);
                         isValid = true; // Disc addition is valid
+
+                        //ResetTop(towerThree, discs);
 
                         //PrintStack(towerThree, 3); // Print Stack after removing
                     }
@@ -155,6 +161,7 @@ public class S_StackController : MonoBehaviour
                 {
                     Debug.Log("Make next disc as top...");
                     discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                    //ResetTop(towerOne, discs);
                 }
                 else
                 {
@@ -170,6 +177,7 @@ public class S_StackController : MonoBehaviour
                 {
                     Debug.Log("Make next disc " + towerTwo.Peek() + " as top...");
                     discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                    //ResetTop(towerTwo, discs);
                 }
                 else
                 {
@@ -185,6 +193,7 @@ public class S_StackController : MonoBehaviour
                 {
                     Debug.Log("Make next disc as top...");
                     discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                    //ResetTop(towerThree, discs);
                 }
                 else
                 {
@@ -234,9 +243,33 @@ public class S_StackController : MonoBehaviour
     }
 
     // Mark topmost disc in a tower
-    public void ResetTop(Stack<int> tower)
+    public void ResetTop(Stack<int> tower, GameObject[] discs)
     {
-        // Iterate through Stack and check top
+        Debug.Log("Resetting top...");
+
+        // Check if top is marked
+        if (!discs[tower.Peek() - 1].GetComponent<S_ObjectType>().isTop)
+        {
+            discs[tower.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make top most disc as the top
+            Debug.Log("Disc " + (tower.Peek() - 1) + " is the top");
+
+            tower.Pop(); // Remove top disc
+
+            if (tower.Count > 0)
+            {
+                // Mark rest of the discs as not top
+                int temp = 0;
+
+                // Iterate through Stack markk bottom discs as not top
+                for (int i = 0; i < tower.Count; i++)
+                {
+                    temp = tower.Pop();
+                    discs[temp - 1].GetComponent<S_ObjectType>().isTop = false; // Make remaining discs as not top
+                    Debug.Log("Disc " + (temp - 1) + " is not top");
+                }
+
+            }
+        }
     }
 
     // Check stack to see if all discs have been moved to a new tower
