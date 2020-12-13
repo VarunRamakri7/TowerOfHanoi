@@ -24,7 +24,7 @@ The disc and tower you select will be highlighted. If the movement is valid,
 the disc will snap into place in the tower you have chosen. If the move is invalid,
 a warning will appear.
 
-#### To Do:
+## To Do:
 - [x] Basic UI Implementation
 - [x] Non functional game setup
 - [x] Object highlighting
@@ -36,7 +36,7 @@ a warning will appear.
 - [x] End Game Screen
 - [ ] Bug fixes
 
-#### Known Bugs:
+## Known Bugs:
 - `isTop` variable does not change correctly. This happens randomly. If you are unable
 to move a disc in a valid move, check the disc's `isTop` value in the editor and change it to true.
 - Stack says empty when it is not. This also happens randomly. If you get a Stack related error,
