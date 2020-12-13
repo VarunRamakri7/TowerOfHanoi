@@ -19,7 +19,7 @@ Mouse - Menu elements, moving discs, direction (in First-Person view)
 WASD - Move around (in First-Person view).
 
 ### Moving Discs
-Click on the disc you want to move and then on the tower you want to move.
+Click on the disc you want to move and then on the tower you want to move the disc to.
 The disc and tower you select will be highlighted. If the movement is valid,
 the disc will snap into place in the tower you have chosen. If the move is invalid,
 a warning will appear.
