@@ -11,6 +11,7 @@ public class S_StackController : MonoBehaviour
     public Stack<int> towerThree = new Stack<int>(STACK_SIZE);
 
     public bool endGame = false; // End game status
+    public bool moveStarted = false; // Tracks whether player has started moving discs
 
     // Start is called before the first frame update
     void Start()
@@ -194,29 +195,32 @@ public class S_StackController : MonoBehaviour
     private void Update()
     {
         // Check Game complete state
-        if (!endGame)
+        if (moveStarted)
         {
-            // Check if the discs are in order in all the Stacks
-            if (towerOne.Count == STACK_SIZE) // If all discs are in tower 1
+            if (!endGame)
             {
-                Debug.Log("Checking Tower One...");
-                endGame = CheckComplettion(towerOne);
+                // Check if the discs are in order in all the Stacks
+                if (towerOne.Count == STACK_SIZE) // If all discs are in tower 1
+                {
+                    Debug.Log("Checking Tower One...");
+                    endGame = CheckComplettion(towerOne);
+                }
+                else if (towerTwo.Count == STACK_SIZE) // If all discs are in tower 2
+                {
+                    Debug.Log("Checking Tower Two...");
+                    endGame = CheckComplettion(towerTwo);
+                }
+                else if (towerThree.Count == STACK_SIZE) // If all discs are in tower 3
+                {
+                    Debug.Log("Checking Tower Three...");
+                    endGame = CheckComplettion(towerThree);
+                }
             }
-            else if (towerTwo.Count == STACK_SIZE) // If all discs are in tower 2
+            else
             {
-                Debug.Log("Checking Tower Two...");
-                endGame = CheckComplettion(towerTwo);
+                // End game if it is complete
+                Debug.Log("Game Over. You have won!");
             }
-            else if (towerThree.Count == STACK_SIZE) // If all discs are in tower 3
-            {
-                Debug.Log("Checking Tower Three...");
-                endGame = CheckComplettion(towerThree);
-            }
-        }
-        else
-        {
-            // End game if it is complete
-            Debug.Log("Game Over. You have won!");
         }
 
         DebugKeys();

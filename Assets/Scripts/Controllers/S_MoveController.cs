@@ -38,6 +38,12 @@ public class S_MoveController : MonoBehaviour
         int selDiscNum = highlightController.GetComponent<S_HighlightController>().selectedDisc; // Get selected disc number
         int selTowerNum = highlightController.GetComponent<S_HighlightController>().selectedTower; // Get selected tower number
 
+        // Flag to mention that player has started moving discs
+        if (!stackController.GetComponent<S_StackController>().moveStarted)
+        {
+            stackController.GetComponent<S_StackController>().moveStarted = true;
+        }
+
         // Check if disc is topmost disc of a tower
         if (discs[selDiscNum - 1].GetComponent<S_ObjectType>().isTop)
         {
