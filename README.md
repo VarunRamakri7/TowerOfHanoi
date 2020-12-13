@@ -36,4 +36,10 @@ a warning will appear.
 - [x] End Game Screen
 - [ ] Bug fixes
 
+#### Known Bugs:
+- `isTop` variable does not change correctly. This happens randomly. If you are unable
+to move a disc in a valid move, check the disc's `isTop` value in the editor and change it to true.
+- Stack says empty when it is not. This also happens randomly. If you get a Stack related error,
+press 1/2/3 to view the contents of the corresponding stack and j/k/l to clear the corresponding stack.
+
 
