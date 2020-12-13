@@ -10,6 +10,7 @@ Project Files from the Tower of Hanoi game made using Unity
 - [x] Game Logic
 - [x] Stack functionality
 - [x] Basic full game functionality
+- [x] End Game Screen
 - [ ] Bug fixes
 
 
