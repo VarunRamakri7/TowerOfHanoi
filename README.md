@@ -42,4 +42,11 @@ to move a disc in a valid move, check the disc's `isTop` value in the editor and
 - Stack says empty when it is not. This also happens randomly. If you get a Stack related error,
 press 1/2/3 to view the contents of the corresponding stack and j/k/l to clear the corresponding stack.
 
+## My Methodology
+Since you can only move the top most disc of each tower and move it to the top of another tower,
+I use Stacks to solve the problem. The fact that Stacks follow LIFO is the reason I think they
+are the best datastructure for this is problem.
+I use 3 Stacks in total - One for each tower. As the player moves the disc, I pop the disc from
+and push into the corresponding Stack.
+The game ends when either Stack 1 or 3 have all the discs in the correct order.
 
