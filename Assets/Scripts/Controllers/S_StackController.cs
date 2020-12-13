@@ -139,7 +139,6 @@ public class S_StackController : MonoBehaviour
     public void RemoveDisc(int towerNum, GameObject[] discs)
     {
         Debug.Log("In Remove...");
-        //Debug.Log("Disc's tower num: " + towerNum);
 
         // Remove the topmost disc from this tower
         switch (towerNum)
@@ -147,8 +146,6 @@ public class S_StackController : MonoBehaviour
             case 1:
                 Debug.Log("Removing from 1...");
                 towerOne.Pop(); // Remove top disc
-                //PrintStack(towerOne, 1); // Print Stack after removing
-                Debug.Log("Tower 1 size: " + towerOne.Count);
                 if (towerOne.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -164,8 +161,6 @@ public class S_StackController : MonoBehaviour
             case 2:
                 Debug.Log("Removing from 2...");
                 towerTwo.Pop(); // Remove top disc
-                //PrintStack(towerTwo, 2); // Print Stack after removing
-                Debug.Log("Tower 2 size: " + towerTwo.Count);
                 if (towerTwo.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc " + towerTwo.Peek() + " as top...");
@@ -181,8 +176,6 @@ public class S_StackController : MonoBehaviour
             case 3:
                 Debug.Log("Removing from 3...");
                 towerThree.Pop(); // Remove top disc
-                //PrintStack(towerThree, 3); // Print Stack after removing
-                Debug.Log("Tower 3 size: " + towerThree.Count);
                 if (towerThree.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
@@ -203,14 +196,17 @@ public class S_StackController : MonoBehaviour
         // Check Game complete state
         if (towerOne.Count == STACK_SIZE) // If all discs are in tower 1
         {
+            Debug.Log("Checking Tower One...");
             endGame = CheckComplettion(towerOne);
         }
         else if (towerTwo.Count == STACK_SIZE) // If all discs are in tower 2
         {
+            Debug.Log("Checking Tower Two...");
             endGame = CheckComplettion(towerTwo);
         }
         else if (towerThree.Count == STACK_SIZE) // If all discs are in tower 3
         {
+            Debug.Log("Checking Tower Three...");
             endGame = CheckComplettion(towerThree);
         }
 
@@ -220,7 +216,52 @@ public class S_StackController : MonoBehaviour
             Debug.Log("Game Over. You have won!");
         }
 
+        DebugKeys();
+    }
 
+    // Mark topmost disc in a tower
+    public void ResetTop(Stack<int> tower)
+    {
+        // Iterate through Stack and check top
+    }
+
+    // Check stack to see if all discs have been moved to a new tower
+    public bool CheckComplettion(Stack<int> tower)
+    {
+        bool isComplete = false; // If the player has moved all discs to a new tower
+
+        // Iterate through Stack and check if order is correct
+        Stack<int> copy = tower;
+        int[] temp = new int[STACK_SIZE];
+
+        int i = 0;
+        foreach (int disc in tower) // Iterate through copy of stack
+        {
+            // Copy all contents of the stack into an array
+            temp[i++] = copy.Pop();
+        }
+
+        // Check if array contents are in descending order
+        for(i = 0; i < STACK_SIZE - 1; i++)
+        {
+            if (temp[i] != (1 + temp[i + 1])) // Check if araray contents are in descending order
+            {
+                Debug.Log("Discs in wrong order...");
+                break;
+            }
+            else
+            {
+                Debug.Log("Discs in correct order...");
+                isComplete = true;
+            }
+        }
+
+        return isComplete;
+    }
+
+    // Keypress for debugging
+    public void DebugKeys()
+    {
         // Use keys to print stack contents
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -260,41 +301,6 @@ public class S_StackController : MonoBehaviour
             // Clear Tower Three
             towerThree.Clear();
         }
-
-    }
-
-    // Check stack to see if all discs have been moved to a new tower
-    public bool CheckComplettion(Stack<int> tower)
-    {
-        bool isComplete = false; // If the player has moved all discs to a new tower
-
-        // Iterate through Stack and check if order is correct
-        Stack<int> copy = tower;
-        int[] temp = new int[STACK_SIZE];
-
-        int i = 0;
-        foreach (int disc in tower) // Iterate through copy of stack
-        {
-            // Copy all contents of the stack into an array
-            temp[i++] = copy.Pop();
-        }
-
-        // Check if array contents are in descending order
-        for(i = 0; i < STACK_SIZE - 1; i++)
-        {
-            if (temp[i] != (1 + temp[i + 1]))
-            {
-                Debug.Log("Discs in wrong order...");
-                break;
-            }
-            else
-            {
-                Debug.Log("Discs in correct order...");
-                isComplete = true;
-            }
-        }
-
-        return isComplete;
     }
 
     // Print Stack
