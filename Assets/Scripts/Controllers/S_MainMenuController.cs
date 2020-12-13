@@ -1,14 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class S_MainMenuController : MonoBehaviour
 {
-    // Buttons in the Main Menu
-    /*public Button playButton;
-    public Button helpButton;
-    public Button exitButton;*/
-    public GameObject rules;
+    public GameObject rules; // Rules Text
 
     private void Start()
     {

@@ -16,7 +16,6 @@ public class S_MoveController : MonoBehaviour
     public Transform[] spawnPointsThree = new Transform[NUM_DISCS]; // Spawn points on Tower Three
     public GameObject[] discs = new GameObject[NUM_DISCS]; // All discs in game
     public GameObject[] towers = new GameObject[NUM_TOWERS]; // All towers in game
-    //public Transform newDiscPosition; // New position of Disc
 
     private void Start()
     {

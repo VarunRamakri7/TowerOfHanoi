@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sc_Help.unity
     guid: 8e53cd9b89a58244d91fc114e1930d49
+  - enabled: 1
+    path: Assets/Scenes/Sc_Over.unity
+    guid: 8ddbd49d19ed3e44896bdec9e9b041e2
   m_configObjects: {}

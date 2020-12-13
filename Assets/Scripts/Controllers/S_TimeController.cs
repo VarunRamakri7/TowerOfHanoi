@@ -7,21 +7,27 @@ public class S_TimeController : MonoBehaviour
     public Text movesMade; // Shows the number of moves made by user
     public int moves = 0; // Moves made counter
 
-    private float seconds = 0.0f;
-    private float minutes = 0.0f;
+    private float seconds = 0.0f; // To track seconds
+    private float minutes = 0.0f; // To track minutes
+
+    public bool canStart = false; // True if user steps on pedestal
 
     void Update()
     {
-        // Use Time.deltaTime to have a clock
-        seconds += Time.deltaTime;
-        if (seconds > 60)
+        // Trigger only after user steps on pedestal
+        if (canStart)
         {
-            // Increment minutes every 60 seconds
-            minutes += 1;
-            seconds = 0;
-        }
+            // Use Time.deltaTime to have a clock
+            seconds += Time.deltaTime;
+            if (seconds > 60)
+            {
+                // Increment minutes every 60 seconds
+                minutes += 1;
+                seconds = 0;
+            }
 
-        time.text = minutes + ":" + seconds;
-        movesMade.text = moves.ToString();
+            time.text = minutes + ":" + seconds;
+            movesMade.text = moves.ToString();
+        }
     }
 }

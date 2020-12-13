@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class S_StackController : MonoBehaviour
 {
     const int STACK_SIZE = 5;
+
+    public GameObject endGameController; // End game controller in game
 
     // Represent each tower as a Stack
     public Stack<int> towerOne = new Stack<int>(STACK_SIZE);
@@ -220,6 +224,9 @@ public class S_StackController : MonoBehaviour
             {
                 // End game if it is complete
                 Debug.Log("Game Over. You have won!");
+
+                // End Game
+                endGameController.GetComponent<S_EndGameController>().EndGame();
             }
         }
 

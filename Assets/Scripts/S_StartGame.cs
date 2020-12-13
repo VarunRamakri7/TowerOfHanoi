@@ -8,6 +8,9 @@ public class S_StartGame : MonoBehaviour
     public Camera mainCamera; // Main camera in scene
     public GameObject player; // Player character in scene
 
+    public GameObject timeController; // To start timer
+    public GameObject menuText; // Button usage warning
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered...");
@@ -15,6 +18,9 @@ public class S_StartGame : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Starting Game...");
+
+            timeController.GetComponent<S_TimeController>().canStart = true; // Start timer
+            menuText.SetActive(false); // Disable usage warning
 
             mainCamera.gameObject.GetComponent<S_MouseLook>().enabled = false; // Deactivate Script
             Cursor.lockState = CursorLockMode.None; // Unlock cursor
