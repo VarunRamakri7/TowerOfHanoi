@@ -34,13 +34,13 @@ a warning will appear.
 - [x] Stack functionality
 - [x] Basic full game functionality
 - [x] End Game Screen
-- [ ] Bug fixes
+- [x] Bug fixes
 
-## Known Bugs:
-- `isTop` variable does not change correctly. This happens randomly. If you are unable
-to move a disc in a valid move, check the disc's `isTop` value in the editor and change it to true.
-- Stack says empty when it is not. This also happens randomly. If you get a Stack related error,
-press 1/2/3 to view the contents of the corresponding stack and j/k/l to clear the corresponding stack.
+## Known Bugs: (Now resolved)
+- ~~`isTop` variable does not change correctly. This happens randomly. If you are unable
+to move a disc in a valid move, check the disc's `isTop` value in the editor and change it to true.~~
+- ~~Stack says empty when it is not. This also happens randomly. If you get a Stack related error,
+press 1/2/3 to view the contents of the corresponding stack and j/k/l to clear the corresponding stack.~~
 
 ## My Methodology
 Since you can only move the top most disc of each tower and move it to the top of another tower,
