@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class S_MoveController : MonoBehaviour
 {
@@ -31,10 +32,11 @@ public class S_MoveController : MonoBehaviour
         }
 
         // Update top discs
-        if (stackController.GetComponent<S_StackController>().towerOne.Count > 0)
+        /*if (stackController.GetComponent<S_StackController>().towerOne.Count > 0)
         {
             // Top disc of Tower One
-            discs[stackController.GetComponent<S_StackController>().towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = true;
+             discs[stackController.GetComponent<S_StackController>().towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = true;
+
         }
 
         if (stackController.GetComponent<S_StackController>().towerTwo.Count > 0)
@@ -47,7 +49,7 @@ public class S_MoveController : MonoBehaviour
         {
             // Top disc of Tower Two
             discs[stackController.GetComponent<S_StackController>().towerThree.Peek() - 1].GetComponent<S_ObjectType>().isTop = true;
-        }
+        }*/
     }
 
     // Move disc from current tower to new tower

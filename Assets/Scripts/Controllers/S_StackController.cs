@@ -81,7 +81,7 @@ public class S_StackController : MonoBehaviour
                     if (towerTwo.Peek() < discToAddNum)
                     {
                         Debug.Log("New disc is smaller...");
-                        discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
+                        discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
                         discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
 
                         towerTwo.Push(discToAddNum);
@@ -116,7 +116,7 @@ public class S_StackController : MonoBehaviour
                     if (towerThree.Peek() < discToAddNum)
                     {
                         Debug.Log("New disc is smaller...");
-                        discs[towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
+                        discs[towerThree.Peek() - 1].GetComponent<S_ObjectType>().isTop = false; // Top most disc is no longer at top
                         discs[discToAddNum - 1].GetComponent<S_ObjectType>().isTop = true; // Make top disc as top
 
                         towerThree.Push(discToAddNum);
@@ -192,7 +192,7 @@ public class S_StackController : MonoBehaviour
                 if (towerThree.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
-                    //discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                    discs[towerThree.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
                     //ResetTop(towerThree, discs);
                 }
                 else
