@@ -192,7 +192,7 @@ public class S_StackController : MonoBehaviour
                 if (towerThree.Count > 0) // Check if stack is empty
                 {
                     Debug.Log("Make next disc as top...");
-                    discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
+                    //discs[towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true; // Make next disc as top
                     //ResetTop(towerThree, discs);
                 }
                 else
