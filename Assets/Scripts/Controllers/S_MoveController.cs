@@ -149,20 +149,22 @@ public class S_MoveController : MonoBehaviour
         //Debug.Log("Moving Disc: " + discNum);
     }
 
+    // Display warning Text
     public void ShowWarning()
     {
         Debug.Log("Warning...");
         invalidMove.SetActive(true); // Make warning visible
-        /*StartCoroutine(Timer(3)); // Show for 3 seconds
-        invalidMove.SetActive(false); // Make warning invisible*/
+        StartCoroutine(HideWarning(3)); // Hide after 3 seconds
     }
 
-    IEnumerator Timer(int seconds)
+    IEnumerator HideWarning(int seconds)
     {
-        //Debug.Log("Started Coroutine at: " + Time.time);
+        Debug.Log("Started Coroutine at: " + Time.time);
 
         yield return new WaitForSeconds(seconds);
 
-        //Debug.Log("Finished Coroutine at: " + Time.time);
+        Debug.Log("Finished Coroutine at: " + Time.time);
+
+        invalidMove.SetActive(false); // Make warning invisible
     }
 }

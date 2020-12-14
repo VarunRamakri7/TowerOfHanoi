@@ -218,11 +218,6 @@ public class S_StackController : MonoBehaviour
                     Debug.Log("Checking Tower One...");
                     endGame = CheckComplettion(towerOne);
                 }
-                else if (towerTwo.Count == STACK_SIZE) // If all discs are in tower 2
-                {
-                    Debug.Log("Checking Tower Two...");
-                    endGame = CheckComplettion(towerTwo);
-                }
                 else if (towerThree.Count == STACK_SIZE) // If all discs are in tower 3
                 {
                     Debug.Log("Checking Tower Three...");
