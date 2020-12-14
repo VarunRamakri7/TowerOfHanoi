@@ -238,7 +238,7 @@ public class S_StackController : MonoBehaviour
     }
 
     // Mark topmost disc in a tower
-    public void ResetTop(Stack<int> tower, GameObject[] discs)
+    /*public void ResetTop(Stack<int> tower, GameObject[] discs)
     {
         Debug.Log("Resetting top...");
 
@@ -265,7 +265,7 @@ public class S_StackController : MonoBehaviour
 
             }
         }
-    }
+    }*/
 
     // Check stack to see if all discs have been moved to a new tower
     public bool CheckComplettion(Stack<int> tower)
