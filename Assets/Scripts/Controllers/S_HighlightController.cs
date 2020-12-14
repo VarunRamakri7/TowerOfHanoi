@@ -46,7 +46,7 @@ public class S_HighlightController : MonoBehaviour
             selectedDisc = indicatorNum;
             discIndicators[indicatorNum - 1].gameObject.SetActive(highlight); // Highlight the disc
 
-            if (highlight) Debug.Log("Disc selected: " + selectedDisc); // DEBUG
+            //if (highlight) Debug.Log("Disc selected: " + selectedDisc); // DEBUG
         }
         else
         {
@@ -59,7 +59,7 @@ public class S_HighlightController : MonoBehaviour
             selectedTower = indicatorNum;
             towerIndicators[indicatorNum - 1].gameObject.SetActive(highlight); // Highlight the tower
 
-            if (highlight)  Debug.Log("Tower selected: " + selectedTower); // DEBUG
+            //if (highlight)  Debug.Log("Tower selected: " + selectedTower); // DEBUG
         }
     }
 }

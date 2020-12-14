@@ -30,26 +30,6 @@ public class S_MoveController : MonoBehaviour
         {
             MoveDisc();
         }
-
-        // Update top discs
-        /*if (stackController.GetComponent<S_StackController>().towerOne.Count > 0)
-        {
-            // Top disc of Tower One
-             discs[stackController.GetComponent<S_StackController>().towerOne.Peek() - 1].GetComponent<S_ObjectType>().isTop = true;
-
-        }
-
-        if (stackController.GetComponent<S_StackController>().towerTwo.Count > 0)
-        {
-            // Top disc of Tower Two
-            discs[stackController.GetComponent<S_StackController>().towerTwo.Peek() - 1].GetComponent<S_ObjectType>().isTop = true;
-        }
-
-        if (stackController.GetComponent<S_StackController>().towerThree.Count > 0)
-        {
-            // Top disc of Tower Two
-            discs[stackController.GetComponent<S_StackController>().towerThree.Peek() - 1].GetComponent<S_ObjectType>().isTop = true;
-        }*/
     }
 
     // Move disc from current tower to new tower
